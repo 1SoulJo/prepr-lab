@@ -13,6 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/', 'LabsController@index');
+
+Auth::routes();
+
+Route::get('/lab','LabsController@add');
+Route::post('/lab','LabsController@create');
+
+Route::get('/lab/{lab}','LabsController@edit');
+Route::post('/lab/{lab}','LabsController@update');
