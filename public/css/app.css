@@ -5099,9 +5099,21 @@ input[type=button].btn-block {
   margin-bottom: 15px;
 }
 
-.card-item-btns {
-  width: 300px;
+.list-item-lab-name {
+  cursor: pointer;
+}
+
+.list-item-btns {
+  width: 1%;
   text-align: end;
+}
+
+.list-item-form {
+  display: flex;
+}
+
+.list-item-form button:first-of-type {
+  margin-right: 10px;
 }
 
 @media (min-width: 576px) {

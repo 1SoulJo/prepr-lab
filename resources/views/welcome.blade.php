@@ -7,7 +7,7 @@
         @if (Auth::check())
             <div class="card-header">Labs List</div>
             <div class="card-body">
-                <a href="/lab" class="btn btn-primary">Add new Lab</a>
+                <a href="/lab" class="btn btn-primary btn-add-new">Add new Lab</a>
                 <table class="table mt-4">
                     <thead><tr>
                         <th colspan="2">Labs</th>
@@ -16,12 +16,12 @@
                 <tbody>
                 @foreach($labs as $lab)
                     <tr>
-                        <td>
+                        <td class="list-item-lab-name" onclick="openLab({{$lab->id}})">
                             {{$lab->name}}
                         </td>
-                        <td class="card-item-btns">
-                            <form action="/lab/{{$lab->id}}">
-                                <button type="submit" name="edit" class="btn btn-primary">Edit</button>
+                        <td class="list-item-btns">
+                            <form class="list-item-form" action="/lab/{{$lab->id}}">
+                                <button type="submit" name="edit" formmethod="POST" class="btn btn-primary">Edit</button>
                                 <button type="submit" name="delete" formmethod="POST" class="btn btn-danger">Delete</button>
                                 {{ csrf_field() }}
                             </form>

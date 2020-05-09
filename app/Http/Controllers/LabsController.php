@@ -12,6 +12,7 @@ class LabsController extends Controller
     {
         $user = Auth::user();
         $labs = Lab::all();
+
     	return view('welcome',compact('labs'));
     }
 
@@ -23,19 +24,21 @@ class LabsController extends Controller
     public function create(Request $request)
     {
     	$lab = new Lab();
-    	$lab->name = $request->name;
-    	$lab->save();
+        $lab->name = $request->name;
+        // Add location value
+
+        $lab->save();
+        
     	return redirect('/'); 
     }
 
-    public function edit(Lab $lab)
+    public function open(Lab $lab)
     {
-
     	if (Auth::check()) {            
-            return view('edit', compact('lab'));
+            return view('open', compact('lab'));
         } else {
             return redirect('/');
-        }            	
+        }
     }
 
     public function update(Request $request, Lab $lab)
@@ -45,10 +48,15 @@ class LabsController extends Controller
             
     		return redirect('/');
     	} else {
-    		$lab->name = $request->name;
-            $lab->save();
+    		// $lab->name = $request->name;
+            // $lab->save();
             
-	    	return redirect('/'); 
+            // return redirect('/'); 
+            if (Auth::check()) {            
+                return view('edit', compact('lab'));
+            } else {
+                return redirect('/');
+            } 
     	}    	
     }
 }

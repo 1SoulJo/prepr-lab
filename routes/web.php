@@ -28,5 +28,5 @@ Auth::routes();
 Route::get('/lab','LabsController@add');
 Route::post('/lab','LabsController@create');
 
-Route::get('/lab/{lab}','LabsController@edit');
+Route::get('/lab/{lab}','LabsController@open');
 Route::post('/lab/{lab}','LabsController@update');
