@@ -19,8 +19,7 @@
                         <td>
                             {{$lab->name}}
                         </td>
-                        <td>
-                            
+                        <td class="card-item-btns">
                             <form action="/lab/{{$lab->id}}">
                                 <button type="submit" name="edit" class="btn btn-primary">Edit</button>
                                 <button type="submit" name="delete" formmethod="POST" class="btn btn-danger">Delete</button>

@@ -28,10 +28,10 @@ class LabsController extends Controller
     	return redirect('/'); 
     }
 
-    public function edit(Task $lab)
+    public function edit(Lab $lab)
     {
 
-    	if (Auth::check() && Auth::user()->id == $lab->user_id) {            
+    	if (Auth::check()) {            
             return view('edit', compact('lab'));
         } else {
             return redirect('/');
