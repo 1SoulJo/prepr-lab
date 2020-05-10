@@ -1809,7 +1809,7 @@ pre code {
 .table th,
 .table td {
   padding: 0.75rem;
-  vertical-align: middle;
+  vertical-align: top;
   border-top: 1px solid #dee2e6;
 }
 
@@ -5097,29 +5097,6 @@ input[type=button].btn-block {
 
 .card-group > .card {
   margin-bottom: 15px;
-}
-
-.list-item-lab-name {
-  cursor: pointer;
-}
-
-.list-item-btns {
-  width: 1%;
-  text-align: end;
-}
-
-.list-item-form {
-  display: flex;
-}
-
-.list-item-form button:first-of-type {
-  margin-right: 10px;
-}
-
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 @media (min-width: 576px) {

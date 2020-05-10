@@ -7,7 +7,7 @@
 
     <div class="card">
         <div class="card-body">
-            <form method="POST" action="/new">
+            <form method="POST" action="/lab">
                 <div class="form-group">
                     <h3>Lab name</h3>
                     <input type="text" name="lab_name" class="form-control" value="{{old('lab_name')}}"></input>  

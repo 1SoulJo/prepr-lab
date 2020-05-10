@@ -12,4 +12,12 @@ class Lab extends Model
      * @var string
      */
     protected $table = 'labs';
+
+    public function getMapUrl() {
+        return "https://maps.google.com/?q={$this->getAddressString()}";
+    }
+
+    public function getAddressString() {
+        return "{$this->address1}+{$this->city}+{$this->state}+{$this->zip}";
+    }
 }
