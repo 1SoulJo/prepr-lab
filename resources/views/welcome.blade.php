@@ -1,35 +1,30 @@
 @extends('layouts.app')
 
-@push('head')
-<style>
-    .list-item-lab-name {
-        cursor: pointer;
-    }
-
-    .list-item-btns {
-        width: 1%;
-        text-align: end;
-    }
-
-    .list-item-form {
-        display: flex;
-    }
-
-    .list-item-form button:first-of-type {
-        margin-right: 10px;
-    }
-</style>
-@endpush
-
 @section('content')
 
 <div class="container">
     <div class="card">
         @if (Auth::check())
-            <div class="card-header">Labs List</div>
+            <div class="card-header">
+                <b>Labs List</b>
+            </div>
             <div class="card-body">
+                <!-- Buttons -->
                 <a href="/lab" class="btn btn-primary btn-add-new">Add New Lab</a>
                 <a href="/map" class="btn btn-outline-success">Labs Map</a>
+                
+                <!-- Search form -->
+                <form action="/search" method="POST" role="search" class="search-form">
+                    {{ csrf_field() }}
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="q" placeholder="Search labs">
+                            <button type="submit" class="btn btn-info search-btn">
+                                Search
+                            </button>
+                    </div>
+                </form>
+
+                <!-- List -->
                 <table class="table mt-4">
                     <thead>
                         <tr>
@@ -68,3 +63,48 @@
 </div>
 
 @endsection
+
+
+@push('head')
+<style>
+    .table td {
+        vertical-align: middle;
+    }
+
+    .list-item-lab-name {
+        cursor: pointer;
+        font-size: 1.3em;
+    }
+
+    .list-item-lab-name:hover {
+        font-weight: bold;
+        background: #eeeeee;
+    }
+
+    .list-item-btns {
+        width: 1%;
+        text-align: end;
+    }
+
+    .list-item-form {
+        display: flex;
+    }
+
+    .list-item-form button:first-of-type {
+        margin-right: 10px;
+    }
+
+    .list-item-date-created {
+        width: 20%;
+    }
+
+    .search-form {
+        margin: 10px 0;
+        width: 50%;
+    }
+
+    .search-btn {
+        border-radius: 0 5px 5px 0;
+    }
+</style>
+@endpush

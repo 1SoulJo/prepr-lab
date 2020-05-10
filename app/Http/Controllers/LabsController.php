@@ -72,8 +72,6 @@ class LabsController extends Controller
         }    
         
         if(isset($_POST['update'])) {
-            echo $request->lab_name;
-
             $lab->name = $request->lab_name;
             $lab->address1 = $request->address1;
             $lab->address2 = $request->address2;
@@ -85,5 +83,12 @@ class LabsController extends Controller
 
             return redirect('/');
     	}    
+    }
+
+    public function search(Request $request) {
+        $q = $request->q;
+        $labs = Lab::where('name','LIKE','%'.$q.'%')->get();
+        
+        return view('welcome', compact('labs'));
     }
 }

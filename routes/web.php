@@ -33,4 +33,15 @@ Route::post('/lab/{lab}','LabsController@update');
 
 Route::get('/lab/{lab}','LabsController@open');
 
+Route::post('/search', 'LabsController@search');
+// Route::any('/search',function(){
+//     $q = Input::get('q');
+//     $labs = Lab::where('name','LIKE','%'.$q.'%')->orWhere('email','LIKE','%'.$q.'%')->get();
+//     if(count($labs) > 0) {
+//         return view('welcome')->withDetails($labs)->withQuery($q);
+//     } else {
+//         return view('welcome')->withMessage('No Details found. Try to search again !');
+//     }
+// });
+
 Route::get('/map', 'MapController@index');
