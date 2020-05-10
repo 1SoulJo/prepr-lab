@@ -17,7 +17,11 @@ class CreateLabsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('name');
-            $table->geometry('location')->nullable();
+            $table->string('address1');
+            $table->string('address2');
+            $table->string('city');
+            $table->string('state');
+            $table->string('zip');
         });
     }
 

@@ -7,7 +7,8 @@
         @if (Auth::check())
             <div class="card-header">Labs List</div>
             <div class="card-body">
-                <a href="/lab" class="btn btn-primary btn-add-new">Add new Lab</a>
+                <a href="/new" class="btn btn-primary btn-add-new">Add New Lab</a>
+                <a href="/new" class="btn btn-outline-success">Labs Map</a>
                 <table class="table mt-4">
                     <thead><tr>
                         <th colspan="2">Labs</th>
