@@ -19,9 +19,9 @@
 <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdmbRi43RUtaRK5pRAkjWwG9_LfYYfYcA&callback=initMap"></script>
 
 <script>
-    function initMap() {
-        var arr = [];
+    var arr = [];
 
+    function initMap() {
         @foreach($labs as $lab)
             arr.push({
                 "name": "{{$lab->name}}",
@@ -61,7 +61,9 @@
                 });
 
                 bounds.extend(results[0].geometry.location);
-                resultsMap.fitBounds(bounds);
+                if (arr.length > 1) {
+                    resultsMap.fitBounds(bounds);
+                }
             } else {
                 alert('Geocode was not successful for the following reason: ' + status);
             }

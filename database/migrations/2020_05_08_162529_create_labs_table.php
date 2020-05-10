@@ -17,7 +17,7 @@ class CreateLabsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('name');
-            $table->string('desc');
+            $table->longText('desc');
             $table->string('address1');
             $table->string('address2')->nullable();
             $table->string('city');

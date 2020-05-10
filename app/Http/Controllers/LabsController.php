@@ -73,6 +73,7 @@ class LabsController extends Controller
         
         if(isset($_POST['update'])) {
             $lab->name = $request->lab_name;
+            $lab->desc = $request->desc;
             $lab->address1 = $request->address1;
             $lab->address2 = $request->address2;
             $lab->city = $request->city;

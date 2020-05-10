@@ -15,7 +15,7 @@
 
                 <div class="form-group">
                     <h3>Descrpition</h3>
-                    <textarea name="desc" class="form-control" value="{{$lab->desc}}"></textarea>  
+                    <textarea name="desc" class="form-control">{{$lab->desc}}</textarea>  
                 </div>
 
                 <h3>Location</h3>
